@@ -1,0 +1,39 @@
+/* dashboard.component.scss */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav a {
+  margin: 0 20px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.nav a.active {
+  color: #333;
+  font-weight: bold;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}

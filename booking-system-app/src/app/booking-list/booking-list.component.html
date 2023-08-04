@@ -1,0 +1,36 @@
+<div class="booking-list">
+  <h2>Booking List</h2>
+  <div class="table-container">
+    <ng-container *ngIf="bookings.length > 0; else noDataMessage">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Description</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of bookings">
+          <td>{{ booking.bookingStart | date: 'medium' }}</td>
+          <td>{{ booking.bookingEnd | date: 'medium' }}</td>
+          <td>{{ booking.description }}</td>
+          <td class="btn-container">
+            <button (click)="deleteBooking(booking.bookingId)">Delete</button>
+            <button (click)="updateBooking(booking)">Update</button>
+            <button (click)="viewBooking(booking.bookingId)">View</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <!-- "No data" message -->
+  <ng-template #noDataMessage>
+    <div class="no-data-message">
+      <p>No data</p>
+    </div>
+  </ng-template>
+  </div>
+</div>

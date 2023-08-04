@@ -1,0 +1,79 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.booking-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.booking-list h2 {
+  text-align: center;
+}
+
+/* Responsive table styles */
+.table-container {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+}
+
+/* Adjust table layout for smaller screens */
+@media screen and (max-width: 767px) {
+  .table th,
+  .table td {
+    padding: 8px;
+  }
+}
+
+/* Button styles */
+.btn-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btn-container button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.no-data-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* You can adjust the height as per your design */
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+}
+
+.no-data-message p {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Adjust button layout for smaller screens */
+@media screen and (max-width: 767px) {
+  .btn-container {
+    flex-direction: column;
+    margin-top: 8px;
+  }
+  
+  .btn-container button {
+    margin: 4px 0;
+  }
+}

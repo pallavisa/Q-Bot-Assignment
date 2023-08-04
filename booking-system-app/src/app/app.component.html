@@ -1,0 +1,11 @@
+<!-- dashboard.component.html -->
+<div class="dashboard">
+  <h1 class="title">Booking App</h1>
+  <nav class="nav">
+    <a routerLink="/bookings" routerLinkActive="active">Booking List</a>
+    <a  [routerLink]="['/booking/create']" routerLinkActive="active" (click)="navigateToCreateBooking()">Create Booking</a>
+  </nav>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

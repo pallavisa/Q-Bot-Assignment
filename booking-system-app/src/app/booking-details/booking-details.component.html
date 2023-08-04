@@ -1,0 +1,9 @@
+<div class="booking-details">
+    <h2>Booking Details</h2>
+    <div *ngIf="booking">
+      <p><strong>Start Time:</strong> {{ booking.bookingStart | date: 'medium' }}</p>
+      <p><strong>End Time:</strong> {{ booking.bookingEnd | date: 'medium' }}</p>
+      <p><strong>Description:</strong> {{ booking.description }}</p>
+    </div>
+  </div>
+  

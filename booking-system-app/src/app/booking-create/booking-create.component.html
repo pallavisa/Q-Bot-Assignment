@@ -1,0 +1,36 @@
+
+  <div class="create-booking">
+    <h2>{{ isUpdateMode ? 'Update Booking' : 'Create Booking' }}</h2>
+    <form [formGroup]="bookingForm" (ngSubmit)="submitBooking()">
+      <div class="form-group">
+        <label for="bookingStart">Start Time:</label>
+        <input type="datetime-local"  formControlName="bookingStart" [(ngModel)]="bookingStart"  [min]="minBookingDateTime" required>
+        <div *ngIf="bookingForm.get('bookingStart')?.invalid && bookingForm.get('bookingStart')?.touched" class="error-message">
+          Start time is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="duration">Duration:</label>
+        <select formControlName="duration"  [(ngModel)]="duration"  required>
+          <option value="">Select duration</option>
+          <option value="30">30 minutes</option>
+          <option value="60">1 hour</option>
+        </select>
+        <div *ngIf="bookingForm.get('duration')?.invalid && bookingForm.get('duration')?.touched" class="error-message">
+          Duration is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" formControlName="description" [(ngModel)]="description" required>
+        <div *ngIf="bookingForm.get('description')?.invalid && bookingForm.get('description')?.touched" class="error-message">
+          Description is required.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="bookingForm.invalid" [ngStyle]="{'background-color': bookingForm.invalid ? 'grey' : ''}">
+        {{ isUpdateMode ? 'Update' : 'Create' }} Booking
+      </button>
+    </form>
+  </div>
+  
+  
